@@ -1,0 +1,105 @@
+{% if num == 1 %}
+<script>
+  window.alert("department assigned successfully");
+</script>
+{% endif %}
+
+{% if num == 2 %}
+<script>
+  window.alert("no such name or id.\n also make sure that the desired student is active");
+</script>
+{% endif %}
+
+{% if num == 5 %}
+<script>
+  window.alert("you cannot assign a department to students whose level less than 3 ");
+</script>
+{% endif %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Mohammad Ayman" />
+    <title>Search for students</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css-files/search.css' %}" />
+    <script src="{%  static 'js-files/search.js' %}"></script>
+  </head>
+  <body>
+    <section>
+      <nav class="nav">
+        <a class="title" href="http://127.0.0.1:8000/homepage" style="color: crimson;"
+          >Student Affairs</a
+        >
+
+        <a class="links" href="http://127.0.0.1:8000/homepage">Home</a>
+        <a class="links" href="http://127.0.0.1:8000/active-inactive"
+          >Active-Inactive Students</a
+        >
+        <a class="links" href="http://127.0.0.1:8000/search">Search</a>
+        <a class="links" href="http://127.0.0.1:8000/addStudentPage">Add Student</a>
+        <a class="links" href="http://127.0.0.1:8000/editPage">Edit</a>
+      </nav>
+    </section>
+    <fieldset class="h">
+      <h1>find student data</h1>
+      <form action="http://127.0.0.1:8000/getSt" method="POST">
+        {% csrf_token %}
+        <div id="search-via">
+          <strong>Search via:</strong>
+          <select id="Search_select" name="select" >
+            <option value="id" >ID</option>
+            <option value="name" >Name</option>
+          </select>
+        </div>
+        <div class="nz">
+          <b id="para">Enter:</b>
+          <input type="search" id="ser" name="search"  />
+          <button type="submit" id="but" >
+            <img src="{% static 'images/search.jpg' %}" />
+          </button>
+        </div>
+  
+        <div id="Output" class="output"></div>
+
+      </form>
+     
+    </fieldset>
+    <!-- {% block javascript %}
+    <script>
+      function search (){
+        var k=1;
+          if($("#Search_select").value!="id"){
+            k=2;
+          }
+          var y=$("ser").val();
+          $.ajax({
+            url:"getSt",
+            data:{
+              'a':k,
+              'b':y,
+            },
+            dataType:'http',
+            // success:function(data){
+            //   if(data.){
+            //     alert("hi");
+            //   }
+            // }
+            success:
+
+          });
+      } -->
+      <!-- // $("#but").onclick(function(){
+        // if($("Search_select").val()=="id"){
+         
+        // }
+        // console.log($(this).val());
+    // } );
+    </script>
+    {% endblock %} -->
+
+  </body>
+</html>

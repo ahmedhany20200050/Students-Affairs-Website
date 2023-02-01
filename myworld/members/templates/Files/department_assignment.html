@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css-files/Department Assignment.css' %}">
+</head>
+
+<body>
+    </header>
+    <section>
+        <nav class="nav">
+
+            <a class="title" href="homepage" style="color: crimson;">Student Affairs</a>
+
+            <a class="links" href="homepage">Home</a>
+            <a class="links" href="active-inactive">Active-Inactive Students</a>
+            <a class="links" href="search">Search</a>
+            <a class="links" href="addStudentPage">Add Student</a>
+            <a class="links" href="editPage">Edit</a>
+        </nav>
+    </section>
+    <header>
+
+        <h1>Department Assignment</h1>
+        <!-- A sample of the view students table in html-->
+
+        <section class="dark">
+            <table>
+                <thead>
+                    <th>Student Name</th>
+                    <th>Student ID</th>
+                    <th>level</th>
+                    <th>choose</th>
+                    <th>Assignment</th>
+                    <th>Department</th>
+                </thead>
+                <tbody>
+                    {% for s in students %}
+                    <form action="assign/{{ s.ID }}" method="POST">
+                        <tr>
+                            <td>{{ s.name }}</td>
+                            <td>{{ s.ID }}</td>
+                            <td name="level" >{{ s.level }}</td>
+                            <td>
+                                <select name="dep">
+                                    <option value="cs">CS</option>
+                                    <option value="is">IS</option>
+                                    <option value="ai">AI</option>
+                                    <option value="it">IT</option>
+                                    <option value="ds">DS</option>
+                                </select>
+                            </td>
+                            
+                            <td><button>set Department</button></td>
+                            <td>{{ s.dep }}</td>
+                        </tr>
+                    </form>
+                    {% endfor %}
+                    
+                </tbody>
+                {% for x in students %}
+                <tr>
+                    <td>
+                        <a href="update/{{ x.id }}">{{ x.id }}</a>
+                    </td>
+                    <!-- <td>{{ x.id }}</td> -->
+                    <!-- <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                    <td><a href="delete/{{ x.id }}">delete</a></td> -->
+                </tr>
+                {% endfor %}
+            </table>
+        </section>
+        <hr>
+        <div class="select">
+            <label for="dept">Department</label>
+            
+            <!-- <button>send</button> -->
+        </div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css-files/loginForm.css' %}" />
+<script src="{% static 'js-files/login.js' %}"></script>
+
+<body>
+
+  <section>
+    <nav class="nav">
+      
+    </nav>
+  </section>
+
+
+
+
+  <form action="validate" class="dark" method="POST">
+    {% csrf_token %}
+    <h3 class="text">Employee Login</h3>
+    <label class="text" for="email">E-mail:</label>
+    <p></p>
+    <input class="fields" id="email" type="email" name="email" required />
+    <p></p>
+    <label class="text" for="pass">Password:</label>
+    <p></p>
+    <input class="fields" id="password" type="password" name="password" minlength="4" />
+    <p></p>
+    <button class="button" type="submit" value="Submit">
+      Sign In
+    </button>
+    <p style="font-weight:900">hint for TA: SUBMIT wrong data</p>
+  </form>
+  {% if ok == False %}
+<script>
+window.alert('wrong data email:ahmed@gmail.com pass:1234');
+</script>
+{% endif %}
+
+</body>
+
+</html>

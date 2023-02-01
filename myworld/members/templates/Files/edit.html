@@ -1,0 +1,159 @@
+{% if ok == False %}
+<script>
+  window.alert("ID does not exist");
+</script>
+{% endif %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css-files/editForm.css' %}" />
+  </head>
+
+  <body>
+    <section>
+      <nav class="nav">
+        <a class="title" href="homepage" style="color: crimson;"
+          >Student Affairs</a
+        >
+
+        <a class="links" href="homepage">Home</a>
+        <a class="links" href="active-inactive"
+          >Active-Inactive Students</a
+        >
+        <a class="links" href="search">Search</a>
+        <a class="links" href="addStudentPage">Add Student</a>
+        <a class="links" href="editPage">Edit</a>
+      </nav>
+    </section>
+
+    <div class="dark">
+      <div class="text heading">
+        <label>edit student data</label>
+      </div>
+
+
+      <form action="updateStudents" method="POST" onsubmit="return confirm('are you sure?');">
+        {% csrf_token %}
+        <div>
+          <label class="text" for="name">Name</label><br />
+          <input
+            type="text"
+            class="fields"
+            id="name"
+            name="name"
+            placeholder="Enter your Name"
+            required
+          />
+        </div>
+        <br />
+        <div>
+          <label class="text" for="num">ID</label><br />
+          <input
+          min="20000000"
+          max="99999999"
+            type="number"
+            class="fields"
+            id="num"
+            placeholder="Enter your id"
+            required
+            name="id"
+          />
+        </div>
+        <br />
+        <div>
+          <label class="text" for="birth">Date of birth</label><br />
+          <input
+            class="fields"
+            type="date"
+            id="birth"
+            name="date"
+            required
+  
+          />
+        </div>
+        <br />
+        <div>
+          <label class="text" for="gpa">GPA</label><br />
+          <input
+          min="0"
+          max="4"
+            type="number"
+            class="fields"
+            id="gpa"
+            placeholder="Enter your gpa"
+            name="gpa"
+            step="0.01"
+            required
+          />
+        </div>
+        <br />
+        <div class="text">
+          Gender :
+          <label>Male</label>
+          <input type="radio" name="gender" value="True" checked />
+          <label>Female</label>
+          <input type="radio" name="gender" value="False" />
+        </div>
+        <br />
+        <div class="text">
+          <label for="level">Select your level: </label>
+          <select name="level" class="text fields" id="level" >
+            <option value="1">First Level</option>
+            <option value="2">Second Level</option>
+            <option value="3">Third Level</option>
+            <option value="4">Fourth Level</option>
+          </select>
+        </div>
+        <br />
+        <div class="text">
+          Status :
+          <label for="active">Active</label>
+          <input type="radio" name="status" value="True" checked />
+          <label for="inactive">Inactive</label>
+          <input type="radio" name="status" value="False" />
+        </div>
+        <br />
+        <div class="text">
+          <label for="department">Select your department: </label>
+          <select name="department" class="fields" id="department">
+            <option value="NOT available">YOU CANNOT EDIT THIS</option>
+            
+          </select>
+        </div>
+        <br />
+        <div>
+          <label class="text" for="Email">Email</label><br />
+          <input
+            type="email"
+            class="fields"
+            required
+            id="Email"
+            placeholder="Enter your email"
+            name="email"
+          />
+        </div>
+        <br />
+        <div>
+          <label class="text" for="phone">Mobile number</label><br />
+          <input
+            type="text"
+            class="fields"
+            id="phone"
+            placeholder="Enter your mobile number"
+            required
+            name="phone"
+          />
+        </div>
+        <br>
+        <div class="buttons">
+          <button class="button" id="update" type="submit" name="update" >update</button>
+          <button class="button" id="delete" type="submit" name="delete" >delete</button>
+        </div>
+      </form>
+    </div>
+    <script src="js-files/edit.js"></script>
+  </body>
+</html>

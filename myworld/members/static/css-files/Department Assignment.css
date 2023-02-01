@@ -1,0 +1,145 @@
+.nav {
+  min-width: 100%;
+  /* max-width:100%; */
+  background-color: rgb(35, 29, 29);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 700;
+
+  text-align: left;
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  left: 0%;
+
+  padding: 18px;
+  /*display: flex;
+  justify-content: space-around;
+  align-items: center;*/
+}
+
+.links {
+  margin-left: 5px;
+  margin-right: 5px;
+  text-align: right;
+  font-size: small;
+  /* margin-left: 50%; */
+  color: antiquewhite;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: crimson;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+body {
+  background-image: url(../images/formsBackground.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  margin-top: 10%;
+}
+
+/* ****************Table********************** */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 3px;
+  margin: auto;
+  /*width: 400px;*/
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 120px;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  /*max-width: 400px;*/
+  background-color: rgba(105, 105, 105, 0.607);
+}
+
+table tbody tr {
+  color: #ffffff;
+  text-align: center;
+}
+
+table thead tr {
+  background-color: rgb(35, 29, 29);
+  color: #ffffff;
+  text-align: center;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+}
+
+hr {
+  width: 400px;
+  border-color: black;
+}
+
+.select {
+  text-align: center;
+  margin: auto auto auto auto;
+  padding: 2px;
+  width: 390px;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.132);
+}
+
+.select * {
+  margin: 5px;
+}
+
+.select select {
+  color: #ffffff;
+  background-color: transparent;
+  /* border-radius: 5px;*/
+  border: 0px;
+}
+
+option {
+  background-color: rgb(59, 59, 59);
+}
+
+button {
+  color: antiquewhite;
+  background-color: rgba(220, 20, 60, 0.879);
+  /* border-color: crimson; */
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 0px;
+  padding: 5px;
+  padding-inline: 10px;
+}
+
+dark {
+  /* max-width:min-content; */
+  /* margin-top: 250px;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;*/
+  max-width: 400px;
+  background-color: rgba(105, 105, 105, 0.607);
+  /* min-width: 200px;
+       max-height: 200px; */
+
+  /*text-align: center;*/
+}

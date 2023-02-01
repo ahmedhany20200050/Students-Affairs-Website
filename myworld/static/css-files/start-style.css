@@ -1,0 +1,48 @@
+body {
+  background-image: url(../images/formsBackground.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  margin-top: 10%;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 5px;
+
+  /*margin: auto;
+    /*width: 400px;*/
+}
+
+a {
+  color: antiquewhite;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+  color: crimson;
+}
+
+dark {
+  /* max-width:min-content; */
+  /* margin-top: 250px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;*/
+  max-width: 400px;
+  background-color: rgba(105, 105, 105, 0.607);
+  /* min-width: 200px;
+     max-height: 200px; */
+
+  /*text-align: center;*/
+}
